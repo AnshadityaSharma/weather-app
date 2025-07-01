@@ -1,0 +1,188 @@
+/* Theme Variables */
+body.light {
+  --bg-color: #e0f7fa;
+  --text-color: #222;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --card-text: #222;
+  --button-bg: #0288d1;
+  --button-text: #fff;
+  --input-bg: #fff;
+  --input-text: #222;
+  --input-placeholder: #666;
+  --header-bg: rgba(255, 255, 255, 0.6);
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --card-bg: rgba(0, 0, 0, 0.6);
+  --card-text: #eee;
+  --button-bg: #1e88e5;
+  --button-text: #fff;
+  --input-bg: #333;
+  --input-text: #fff;
+  --input-placeholder: #aaa;
+  --header-bg: rgba(0, 0, 0, 0.6);
+}
+
+/* Main Container */
+.app-container {
+  position: relative;
+  min-height: 130vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  /* margin-top: 5vh; */
+  overflow-y: auto;
+}
+
+
+/* Content Box */
+.overlay {
+  position: relative;
+  z-index: 3;
+  background: var(--card-bg);
+  color: var(--card-text);
+  width: 90%;
+  max-width: 500px;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+/* DateTime + Toggle Buttons */
+.datetime-display {
+  font-size: 0.9rem;
+}
+
+.theme-toggle-btn, .unit-toggle {
+  padding: 8px 12px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+.theme-toggle-btn:hover,
+.unit-toggle:hover {
+  opacity: 0.9;
+}
+
+/* Search Bar */
+.search-section {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+}
+
+.search-section input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+  border: none;
+  background: var(--input-bg);
+  color: var(--input-text);
+}
+
+.search-section input::placeholder {
+  color: var(--input-placeholder);
+}
+
+.search-section button {
+  padding: 0.5rem 1rem;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 0 0.5rem 0.5rem 0;
+  cursor: pointer;
+}
+
+.search-section button:hover {
+  opacity: 0.9;
+}
+
+/* Recent Cities */
+.history {
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.history p {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.history button {
+  background: rgba(255,255,255,0.2);
+  color: inherit;
+  border: none;
+  margin: 0 0.4rem 0.4rem 0;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.history button:hover {
+  opacity: 0.8;
+}
+
+/* Info & Error Messages */
+.info-text, .error-text {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.error-text {
+  color: #ff6b6b;
+}
+
+/* Forecast Grid */
+.forecast-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  z-index: 3;
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .search-section {
+    flex-direction: column;
+  }
+  .search-section input,
+  .search-section button {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+  .search-section button {
+    margin-top: 0.5rem;
+  }
+}
