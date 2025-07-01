@@ -49,7 +49,6 @@ function App() {
       const main = currentData.weather[0].main.toLowerCase();
       const temp = currentData.main.temp;
 
-      // Determine weather condition override based on temperature
       let overrideCondition = main;
       let image = 'clear.jpg';
 
@@ -71,7 +70,6 @@ function App() {
       }
 
       setWeatherCondition(overrideCondition);
-      
       setBgImage(image);
 
       const forecastResp = await fetch(
@@ -142,12 +140,10 @@ function App() {
     <div
       className="app-container"
       style={{
-        background: `url('/src/assets/${bgImage}') center/cover no-repeat`,
+        background: `url('/${bgImage}') center/cover no-repeat`,
       }}
     >
       <WeatherAnimation condition={weatherCondition} />
-      {/* <WeatherAnimation condition="thunderstorm" /> */}
-
 
       <div className="overlay">
         <header className="app-header">
